@@ -5,15 +5,19 @@ progList = [0] * 100
 dataPointer = 0
 
 def incrementPointer():
+	global dataPointer
 	dataPointer += 1
 
 def decrementPointer():
+	global dataPointer
 	dataPointer -= 1
 
 def incrementData():
+	global progList
 	progList[dataPointer] += 1
 
 def decrementData():
+	global progList
 	progList[dataPointer] -= 1
 
 def printData():
