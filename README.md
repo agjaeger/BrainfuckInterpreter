@@ -3,7 +3,9 @@ Brainfuck Interpreter
 
 A interpreter written in Python for Brainfuck
 
-Written in 840 characters (6 Tweets!) :)
+This is an awesome superset for Brainfuck :)
+
+*Insert table of commands here*
 
 ### Features
 + Recursive loops
