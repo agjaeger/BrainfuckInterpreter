@@ -5,8 +5,6 @@ A interpreter written in Python for Brainfuck
 
 This is an awesome superset for Brainfuck :)
 
-*Insert table of commands here*
-
 | Command | Function |
 | ------- | -------- |
 |    >    | Incs data pointer |
