@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 
 import sys
 
@@ -35,7 +36,7 @@ cmds = {
 	',' : inputData,
 }
 
-with open("test.bf") as f:
+with open(sys.argv[1]) as f:
   while True:
     c = f.read(1)
     
@@ -44,4 +45,3 @@ with open("test.bf") as f:
     
     if c in cmds.keys():
     	cmds[c]()
-
