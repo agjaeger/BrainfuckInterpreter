@@ -46,7 +46,6 @@ def inputString():
 	global dataPointer
 	orig_pos = dataPointer
 	
-	print dataPointer
 	string = sys.stdin.read(progList[dataPointer])
 	
 	for character in string:
@@ -59,6 +58,16 @@ def resetPos():
 	global dataPointer
 	dataPointer = 0
 
+def jumpToPos():
+	global dataPointer
+
+	orig_pointer = dataPointer
+	dataPointer = progList[dataPointer]
+	progList[orig_pointer] = 0
+
+def printArray():
+	print progList
+	
 ########
 ## End of Super Set Functions
 ########
@@ -75,6 +84,8 @@ cmds = {
 
 	';' : inputString,
 	'*' : resetPos,
+	':' : jumpToPos,
+	'/' : printArray,
 }
 
 while True:
