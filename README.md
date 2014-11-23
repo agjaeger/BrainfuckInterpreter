@@ -3,8 +3,21 @@ Brainfuck Interpreter
 
 A interpreter written in Python for Brainfuck
 
-Written in 840 characters (6 Tweets!) :)
+This is an awesome superset for Brainfuck :)
 
+| Command | Function |
+| ------- | -------- |
+|    >    | Incs data pointer |
+|    <    | Decs data pointer |
+|    +    | Incs data         |
+|    -    | Decs data         |
+|    .    | print data        |
+|    ,    | read 1 byte stdin |
+|   [ ]   | while loop        |
+|    ;    | read string stdin |
+|    *    | resets data pointer|
+
+Check out the wiki for specs on new commands
 ### Features
 + Recursive loops
 + Basically inifinite lists
