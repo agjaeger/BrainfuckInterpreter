@@ -67,7 +67,7 @@ def jumpToPos():
 
 def printArray():
 	print progList
-	
+
 ########
 ## End of Super Set Functions
 ########
@@ -82,6 +82,7 @@ cmds = {
 	'[' : startWhile,
 	']' : endWhile,
 
+	# Superset Commands
 	';' : inputString,
 	'*' : resetPos,
 	':' : jumpToPos,
