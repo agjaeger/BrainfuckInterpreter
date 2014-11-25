@@ -1,6 +1,8 @@
 Brainfuck Interpreter
 ====================
 
+##### Check out the brainfuck superset branch :)
+
 A interpreter written in Python for Brainfuck
 
 This is an awesome superset for Brainfuck :)
