@@ -1,8 +1,9 @@
 
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+
+import java.util.Stack;
 
 class Token {
 	public char cmd;
@@ -16,6 +17,18 @@ class Token {
 
 
 public class Lexer {
+	private static Stack<Token> tokenStack = new Stack<Token>();
+
+	private static void printTokenStack() {
+		
+		while(tokenStack.empty() == false) {
+			Token token = tokenStack.pop();
+
+			System.out.println("CMD: " + token.cmd);
+			System.out.println("VALUE: " + token.numTimes + "\n");
+		}
+	}
+
 	private static int readFile(String filename) {
 		File file = new File(filename);
    
@@ -31,12 +44,22 @@ public class Lexer {
 
     	try {
     		FileInputStream fis = new FileInputStream(file);
-      		char current;
-      
+      		
       		while (fis.available() > 0) {
-        		current = (char) fis.read();
-        		System.out.print(current);
+        		char cur = (char) fis.read();
+        		int numTimes = 1;
+
+        		char next;
+        		while ((next = (char) fis.read()) == cur) {
+        			numTimes += 1;
+        		}
+        		
+				Token token = new Token(cur, numTimes);
+				tokenStack.push(token);
       		}
+
+      		printTokenStack();
+
     	} catch (IOException e) {
       		e.printStackTrace();
     		return 1;
@@ -44,7 +67,6 @@ public class Lexer {
 
     	return 0;
 	}
-
 
 	public static void main(String[] args) {
 		if (readFile(args[0]) == 1) {
