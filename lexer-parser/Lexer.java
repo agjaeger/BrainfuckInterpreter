@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 import java.util.Stack;
+import java.util.Arrays;
 
 class Token {
 	public char cmd;
@@ -18,7 +19,8 @@ class Token {
 
 public class Lexer {
 	private static Stack<Token> tokenStack = new Stack<Token>();
-
+	private static char[] acceptedChars = {'+', '-', '<', '>', '.', ',', '[', ']'};
+	
 	private static void printTokenStack() {
 		
 		while(tokenStack.empty() == false) {
@@ -27,6 +29,16 @@ public class Lexer {
 			System.out.println("CMD: " + token.cmd);
 			System.out.println("VALUE: " + token.numTimes + "\n");
 		}
+	}
+
+	private static boolean contains(char[] array, char key) {
+		for (char value : array) {
+			if (value == key) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	private static int readFile(String filename) {
@@ -47,6 +59,9 @@ public class Lexer {
       		
       		while (fis.available() > 0) {
         		char cur = (char) fis.read();
+
+        		if(!contains(acceptedChars, cur)) { continue; }
+
         		int numTimes = 1;
 
         		char next;
