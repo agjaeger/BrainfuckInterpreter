@@ -16,7 +16,6 @@ class Token {
 	} 
 }
 
-
 public class Lexer {
 	private static Stack<Token> tokenStack = new Stack<Token>();
 	private static char[] acceptedChars = {'+', '-', '<', '>', '.', ',', '[', ']'};
